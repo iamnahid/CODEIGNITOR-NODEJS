@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
+</head>
+<body>
+	<h2>HOME</h2>
+	<h3>Welcome <%= user.username %></h3>
+	
+	<br/><br/>
+	<a href="/home/Rsignup">Add question</a>
+	<a href="/home/profile">My Profile</a>
+	<br/><br/>
+
+	<table border="1" class="table">
+		<tr>
+			<th>Serial Number</th>
+			<th>Subject</th>
+			<th>Question</th>
+			<th>Option 1</th>
+			<th>Option 2</th>
+			<th>Correct Answer</th>
+		</tr>
+		<% for(var i = 0; i < qList.length; i++) { %>
+		<tr>
+			<td><%= qList[i].questionId %></td>
+			<td><%= qList[i].subject %></td>
+			<td><%= qList[i].question %></td>
+			<td><%= qList[i].option1 %></td>
+			<td><%= qList[i].option2 %></td>
+			<td><%= qList[i].canswer %></td>
+			<td><a href="/home/edit/<%= qList[i].questionId %>">Edit</a> | <a href="/home/delete/<%= qList[i].questionId %>">Delete</a></td>
+		</tr>
+		<% } %>
+	</table>
+
+	<script type="text/javascript" src="jquery.js"></script>
+</body>
+</html>

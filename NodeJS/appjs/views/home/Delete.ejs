@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h2>EDIT</h2>
+	<a href="/home">Back</a>
+	<br/><br/>
+	<form method="post">
+		<input type="hidden" name="questionId" value="<%= ques.questionId%>">
+		<table>
+			<tr>
+				<td>Subject</td>
+				<td><label><%=ques.subject %></label></td>
+			</tr>
+			<tr>
+				<td>Question</td>
+				<td><label><%=ques.question%></label></td>
+			</tr>
+			<tr>
+				<td>Option 1<td>
+				<td><label><%= ques.option1%></label></td>
+			</tr>
+			<tr>
+				<td>Option 2</td>
+				<td><label><%= ques.option2%></label></td>
+			</tr>
+			<tr>
+				<td>Correct Answer</td>
+				<td><label><%= ques.canswer%></label></td>
+			</tr>
+			<tr>
+				<td><h3 align='center' style="color: red;">Are you sure you are deleting this??</h3></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="submit" value="Delete" /></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

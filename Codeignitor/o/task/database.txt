@@ -1,0 +1,50 @@
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+CREATE DATABASE IF NOT EXISTS productdb DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE productdb;
+
+CREATE TABLE categories (
+  `cat_id` int(11) NOT NULL,
+  `cat_name` varchar(20) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+INSERT INTO categories (cat_id, cat_name) VALUES
+(1, 'Accessories'),
+(2, 'Clothing');
+
+CREATE TABLE products (
+  `p_id` int(11) NOT NULL,
+  `p_name` varchar(20) NOT NULL,
+  `price` double NOT NULL,
+  `quantity` int(11) NOT NULL,
+  `cat_id` int(11) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+INSERT INTO products (p_id, p_name, price, quantity, cat_id) VALUES
+(1, 'Hand Bag', 1200, 8, 1),
+(2, 'T-Shirt', 550, 16, 2);
+
+CREATE TABLE users (
+  `username` varchar(20) NOT NULL,
+  `password` varchar(20) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+INSERT INTO users (username, `password`) VALUES
+('test', 'test'),
+('user', 'user');
+
+
+ALTER TABLE categories
+  ADD PRIMARY KEY (`cat_id`),
+  ADD UNIQUE KEY `cat_name` (`cat_name`);
+
+ALTER TABLE products
+  ADD PRIMARY KEY (`p_id`);
+
+ALTER TABLE users
+  ADD PRIMARY KEY (`username`);
+
+
+ALTER TABLE categories
+  MODIFY `cat_id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE products
+  MODIFY `p_id` int(11) NOT NULL AUTO_INCREMENT;

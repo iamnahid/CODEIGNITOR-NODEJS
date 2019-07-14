@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h2>CREATE NEW</h2>
+	<a href="/Home">Back</a>
+	<br/><br/>
+	<form method="post">
+		<table>
+			<tr>
+				<td>Student Id</td>
+				<td> <input type="text" name="stuId"/></td>
+			</tr>
+			<tr>
+				<td>Course Name</td>
+				<td><input type="text" name="coursename" /></td>
+			</tr>
+			<tr>
+				<td>Course Id</td>
+				<td><input type="text" name="courseId" /></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="submit" value="Create" /></td>
+			</tr>
+		</table>
+	</form>
+	<br/><br/>
+	<ul>
+	<% errors.forEach(function(err){ %>
+		<li><%= err.msg %></li>
+	<% }) %>
+	</ul>
+</body>
+</html>

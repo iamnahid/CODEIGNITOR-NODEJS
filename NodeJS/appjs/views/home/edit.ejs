@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h2>EDIT</h2>
+	<a href="/home">Back</a>
+	<br/><br/>
+	<form method="post">
+		<input type="hidden" name="questionId" value="<%= ques.questionId%>">
+		<table>
+			<tr>
+				<td>Subject</td>
+				<td><input type="text" name="subject" value="<%=ques.subject %>"/></td>
+			</tr>
+			<tr>
+				<td>Question</td>
+				<td><input type="text" name="question" value="<%=ques.question%>"/></td>
+			</tr>
+			<tr>
+				<td>Option 1</td>
+				<td><input type="text" name="option1" value="<%= ques.option1%>"/></td>
+			</tr>
+			<tr>
+				<td>Option 2</td>
+				<td><input type="text" name="option2" value="<%= ques.option2%>"/></td>
+			</tr>
+			<tr>
+				<td>Correct Answer</td>
+				<td><input type="text" name="canswer" value="<%= ques.canswer%>"/></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="submit" value="Update" /></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
